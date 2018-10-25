@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>lesson two</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				font-size: 12px;
+				color: #333;
+			}
+			.demo {
+				width: 600px;
+				border: 1px dashed lightgrey;
+				margin: 5px auto;
+			}
+			#typewriting {
+				cursor: pointer;
+			}
+			.box1 {
+				width: 50px;
+				color: blue;
+				border: 1px solid;
+				text-align: center;
+				margin: 10px;
+				display: none;
+			}
+			.box1 div {
+				cursor: pointer;
+				padding: 3px 0;
+			}
+			.box1 div:hover {
+				background-color: skyblue;
+			}
+			.close {
+				border-top:1px solid
+			}
+			#demo2 #outer div {
+				border: 1px solid;
+				cursor: pointer;
+				margin: 5px;
+			}
+			#demo3input {
+				width: 220px;
+			}
+			#overbg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: rgba(0,0,0,.5);
+				display: none;
+			}
+			#box4 {
+				width: 300px;
+				height: 150px;
+				margin: 0 auto;
+				display: none;
+			}
+			#box5 {
+				position: relative;
+				height: 25px;
+				background-color: pink;
+				border: 4px solid orange;
+			}
+			#box5 div {
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				right: 5px;
+				top: 5px;
+				color: orange;
+				border: 1px solid orange;
+				background-color: white;
+				text-align: center;
+				cursor: pointer;
+			}
+			#box6 {
+				position: relative;
+				height: 120px;
+				background-color: white;
+				border: 4px solid orange;
+				border-top: 0;
+			}
+			#box7 {
+				width: 120px;
+				height: 120px;
+				background-color: #333;
+				color: white;
+			}
+			#demo5 button {
+				margin: 5px;
+			}
+			#demo6 ul,#demo6 li{
+				margin:0;
+				padding:0;
+				list-style-type:none;
+			}
+			#imgList{
+				width:700px;
+				overflow:hidden;
+				zoom:1;
+				border:1px solid #333;
+				margin:0 auto;
+				padding:0 0 10px 10px;
+			}
+			#imgList li{
+				float:left;
+				width:128px;
+				height:128px;
+				border:1px solid #ccc;
+				margin:10px 10px 0 0;
+			}
+			#imgList li img{
+				float:left;
+				opacity:0.3;
+				cursor:crosshair;
+			}
+			#imgList li img:hover {
+				 opacity: 1;
+			}
+			#box8 {
+				width: 600px;
+				height: 200px;
+				border: 1px solid;
+			}
+			#box9 {
+				height: 40px;
+				border-bottom: 1px solid;
+				line-height: 40px;
+			}
+			.box9-li{
+				list-style-type:none;
+				float:left;
+				width:128px;
+				text-align: center;
+				background-color: #333333;
+				color: white;
+				cursor: pointer;
+			}
+			.choose {
+				background-color: lightgray;
+				color: #000000;
+			}
+			#box10 div {
+				position: absolute;
+				display: none;
+			}
+			#box11 {
+				position: relative;
+				width: 420px;
+				height: 420px;
+				border: 1px solid #333;
+			}
+			.month {
+				width: 80px;
+				height: 80px;
+				border: 1px solid #333;
+				line-height: 40px;
+				background-color: #333;
+				color: white;
+				float: left;
+				margin: 10px;
+				font-size: 20px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.choose2 {
+				background-color: white;
+				color: red;
+				border: 1px solid #333;
+			}
+			#box11 h2,#box11 p {
+				padding: 0 10px;
+			}
+			#demo9 h2 {
+				position: relative;
+				border: 1px solid;
+				width: 200px;
+				cursor: pointer;
+			}
+			#demo9 ul {
+				border: 1px solid;
+				width: 200px;
+			}
+			#demo9 li {
+				list-style: none;
+			}
+			#demo9 strong {
+				position: absolute;
+				right: 10px;
+			}
+			#play-div {
+				display: none;
+			}
+			#box12 {
+				width: 150px;
+				height: 400px;
+				line-height: 30px;
+				border: 1px solid;
+				border-radius:5px ;
+				padding: 10px;
+				font-size: 16px;
+			}
+			#invert {
+				margin-left: 10px;
+				color: blue;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="demo1" class="demo">
+			1、<button id="typewriting">输入法</button>
+			<div class="box1">
+				<div class="hand">手写</div>
+				<div class="pingyin">拼音</div>
+				<div class="close">关闭</div>
+			</div>
+		</div>
+		<div id="demo2" class="demo">
+			2、点击div显示其innerHTML
+			<div id="outer">
+			    <div><strong>新华网</strong>北京5月29日电(新华社记者)从三聚氰胺到瘦肉精，从染色馒头到毒豆芽，在食品中添加非食用物质和滥用食品添加剂已成为百姓餐桌上突出的"不安全因素"。近期以来，从北京到广东，从浙江到宁夏，一场打击食品非法添加的"风暴"席卷全国。</div>
+			    <div>4月21日，国务院部署严厉打击食品非法添加和滥用食品添加剂专项行动后，广东省高度重视，随即召开了全省电视电话会议。省委领导强调，食品安全是"高压线"，决不能"下不为例"；抓好食品安全要突出一个"<strong>严</strong>"字，做到<strong>严防</strong>、<strong>严查</strong>、<strong>严处</strong>。</div>
+			    <div><strong>宁夏重点开展了四轮问题乳粉彻查清缴工作</strong>，对全区养殖源头、鲜奶收购和乳制品生产、经营、餐饮等环节的2.7万家单位进行了全面清查，共查处问题乳粉案件4起、涉案企业3家，吊销2家乳粉生产企业生产许可证。</div>
+			    <div>做好风险监测工作是许多地方加强食品安全的重点工作之一。在北京，<strong style="color:red;">全市设立了3000个风险监测点</strong>，建立了包括3000余种食品添加剂和非法添加物的数据库，对110家国内外食品相关组织、媒体发布的线索进行监测，及时进行风险评估，加强抽检控制。</div>
+			</div>
+		</div>
+		<div id="demo3" class="demo">
+			3、<input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" id="demo3input"/><span>输入数字求和，数字之间用半角","号分隔</span>
+		    <button onclick="getSum()">求和</button>
+		    <strong id="sum"></strong>
+		</div>
+		<div id="demo4" class="demo">
+			4、<button onclick="alertdiv()">弹出层</button>
+			<div id="overbg"></div>
+			<div id="box4">
+				<div id="box5">
+					<div onclick="hiding()">X</div>
+				</div>
+				<div id="box6"></div>
+			</div>
+		</div>
+		<div id="demo5" class="demo">
+			5、函数传参，改变div任意属性<br />
+			属性名：<input type="text" value="background" id="box7style"/><br />
+			属性值：<input type="text" value="blue" id="box7value"/><br />
+			<button onclick="changediv()">确定</button>
+			<button onclick="resetdiv()">重置</button>
+			<div id="box7">
+				输入属性名和属性值，点击确定查看效果
+			</div>
+		</div>
+		<div id="demo6" class="demo">
+			6、图片列表：鼠标移入改变透明度
+			<ul id="imgList">
+			    <li><img src="img/1.jpg" /></li>
+			    <li><img src="img/2.jpg" /></li>
+			    <li><img src="img/3.jpg" /></li>
+			    <li><img src="img/4.jpg" /></li>
+			    <li><img src="img/5.jpg" /></li>
+			    <li><img src="img/6.jpg" /></li>
+			    <li><img src="img/7.jpg" /></li>
+			    <li><img src="img/8.jpg" /></li>
+			    <li><img src="img/9.jpg" /></li>
+			    <li><img src="img/10.jpg" /></li>
+			</ul>
+		</div>
+		<div id="demo7" class="demo">
+			7、简易选项卡
+			<div id="box8">
+				<div id="box9">
+					<li class="box9-li">lessonone</li>
+					<li class="box9-li">lessontwo</li>
+					<li class="box9-li">lessonthree</li>
+					<div style="clear: both;"></div>
+				</div>
+				<div id="box10" style="position: relative;">
+					<div class="lesson">111111111</div>
+					<div class="lesson">222222222</div>
+					<div class="lesson">333333333</div>
+				</div>
+			</div>
+		</div>
+		<div id="demo8" class="demo">
+			8、简易js年历
+			<div id="box11">
+				<div class="month">1<br/>JAN</div>
+				<div class="month">2<br/>FEB</div>
+				<div class="month">3<br/>MAR</div>
+				<div class="month">4<br/>APR</div>
+				<div class="month">5<br/>MAY</div>
+				<div class="month">6<br/>JUN</div>
+				<div class="month">7<br/>JUL</div>
+				<div class="month">8<br/>AUG</div>
+				<div class="month">9<br/>SEP</div>
+				<div class="month">10<br/>OCT</div>
+				<div class="month">11<br/>NOV</div>
+				<div class="month">12<br/>DEC</div>
+				<div style="clear: both;"></div>
+				<h2>
+					<strong id="monthnum">1</strong>月节日
+				</h2>
+				<p id="jierimsg">
+					元旦：1月1日至3日放假三天。
+				</p>
+			</div>
+		</div>
+		<div id="demo9" class="demo">
+			9、单一按钮显示/隐藏切换
+			<h2 id="play-list">播放列表...<strong id="direction">↓展开</strong></h2>
+		    <ul id="play-div">
+		        <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+		        <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+		        <li><a href="javascript:;">猜不透 - 丁当</a></li>
+		        <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+		        <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+		        <li><a href="javascript:;">流年 - 王菲</a></li>
+		    </ul>
+		</div>
+		<div id="demo10" class="demo">
+			10、全选/全不选/反选
+			<div id="box12">
+				<div style="border-bottom: 1px solid;padding: 5px 0;">
+					<input type="checkbox" name="all" /> <span id="all">全选</span><strong id="invert">反选</strong>
+				</div>
+				<input type="checkbox" name="item" />选项1<br />
+				<input type="checkbox" name="item" />选项2<br />
+				<input type="checkbox" name="item" />选项3<br />
+				<input type="checkbox" name="item" />选项4<br />
+				<input type="checkbox" name="item" />选项5<br />
+				<input type="checkbox" name="item" />选项6<br />
+				<input type="checkbox" name="item" />选项7<br />
+				<input type="checkbox" name="item" />选项8<br />
+				<input type="checkbox" name="item" />选项9<br />
+				<input type="checkbox" name="item" />选项10
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var typewriting = document.getElementById("typewriting");
+		var box1 = document.getElementsByClassName("box1")[0];
+		var close = document.getElementsByClassName("close")[0];
+		var style = box1.style;
+		close.onclick=function(){
+			box1.style.display = "none";
+		}
+		typewriting.onclick =function(){
+			var flog = style.display=="block"?"none":"block";
+			style.display = flog;
+		}
+		/*----------------------------------------*/
+		var demo2 = document.getElementById("outer").children;
+		
+		for(var i = 0;i<demo2.length;i++){
+			demo2[i].onclick = function(){
+				alert(this.innerHTML);
+			}
+		}
+		/*----------------------------------------*/
+		var demo3input = document.getElementById("demo3input");
+		var showSum = document.getElementById("sum");
+		function getSum(){
+			var sum = 0;
+			var array = demo3input.value.split(",");
+			for(var i = 0;i<array.length;i++){
+				sum = sum + Number(array[i]);
+			}
+			showSum.innerHTML = sum;
+		}
+		/*----------------------------------------*/
+		var overbg = document.getElementById("overbg");
+		var box4 = document.getElementById("box4");
+		function alertdiv(){
+			overbg.style.display="block";
+			box4.style.display="block";
+		}
+		function hiding(){
+			overbg.style.display="none";
+			box4.style.display="none";
+		}
+		/*----------------------------------------*/
+		var box7style = document.getElementById("box7style");
+		var box7value = document.getElementById("box7value");
+		var box7 = document.getElementById("box7");
+		function changediv(){
+			box7.style.cssText = box7style.value+':'+box7value.value;
+		}
+		function resetdiv(){
+			box7.style.cssText = "width: 120px;height: 120px;background-color: #333;color: white;"
+		}
+		/*----------------------------------------*/
+		 var liArray = document.getElementsByClassName("box9-li");
+		 var lessonArray = document.getElementsByClassName("lesson");
+		 for(var i = 0;i<liArray.length;i++){
+		 	liArray[i].index=i;
+		 	liArray[i].onclick = function(){
+		 		for(var j = 0;j<liArray.length;j++){
+		 			liArray[j].classList.remove("choose");/*先遍历包括自己在内的所有平级元素，全部删除选中的样式*/
+		 		}
+		 		this.classList.add("choose"); /*然后添加选中的样式*/
+		 		for(var k = 0;k<lessonArray.length;k++){
+		 			lessonArray[k].style.display="none";
+		 		}
+		 		lessonArray[this.index].style.display="block";
+		 	};
+		 }
+		 /*----------------------------------------*/
+		var monthnum = document.getElementById("monthnum");
+		var jierimsg = document.getElementById("jierimsg");
+		 var jrArray = [
+			"元旦：1月1日至3日放假三天。",
+			"春节：2月2日至8日放假7天。",
+			"妇女节：3月8日妇女节，与我无关。",
+			"清明节：4月3日至5日放假3天",
+			"劳动节：4月30日至5月2日放假3天。",
+			"端午节：6月4日至6日放假3天。",
+			"小暑：7月7日小暑。不放假。",
+			"七夕节：8月6日七夕节。不放假。",
+			"中秋节：9月10日至12日放假3天。",
+			"国庆节：10月1日至7日放假7天。",
+			"立冬：11月8日立冬。不放假。",
+			"艾滋病日:12月1日<br />废除奴隶制国际日:12月2日。"
+		];
+		var monthNodes = document.getElementsByClassName("month");
+		for(var i=0;i<monthNodes.length;i++){
+			monthNodes[i].index = i;
+			monthNodes[i].onmouseover = function(){
+				for(var j =0;j<monthNodes.length;j++){
+					monthNodes[j].classList.remove("choose2");
+				}
+				this.classList.add("choose2");
+				monthnum.innerHTML = this.index+1;
+				jierimsg.innerHTML = jrArray[this.index];
+			}
+		}
+		/*----------------------------------------*/
+		var playlist = document.getElementById("play-list");
+		var playdiv = document.getElementById("play-div");
+		var direction =document.getElementById("direction");
+		playlist.onclick =function(){
+			playdiv.style.display = playdiv.style.display == "block"?"none":"block";
+			direction.innerHTML = direction.innerHTML == "↑收起"?"↓展开":"↑收起";
+		}
+		/*----------------------------------------*/
+		var allcheckbox = document.getElementsByName("all")[0];
+		var all = document.getElementById("all");
+		var invert = document.getElementById("invert");
+		var items = document.getElementsByName("item");
+		allcheckbox.onclick = function(){
+			for(var i = 0;i<items.length;i++){
+				items[i].checked = this.checked;
+			}
+			if(this.checked){
+				all.innerHTML = "全不选";
+			}else{
+				all.innerHTML = "全选";
+			}
+		}
+		invert.onclick = function(){
+			var len = 0;
+			for(var i = 0;i<items.length;i++){
+				items[i].checked=!items[i].checked;
+				if(items[i].checked){
+					len+=1;
+				}
+			}
+			if(len==items.length){
+				allcheckbox.checked = true;
+				all.innerHTML = "全不选";
+			}else{
+				allcheckbox.checked = false;
+				all.innerHTML = "全选";
+			}
+		}
+		for(var i = 0;i<items.length;i++){
+			items[i].onclick =function(){
+				var len = 0;
+				for(var i = 0;i<items.length;i++){
+					if(items[i].checked){
+						len+=1;
+					}
+				}
+				if(len==items.length){
+					allcheckbox.checked = true;
+					all.innerHTML = "全不选";
+				}else{
+					allcheckbox.checked = false;
+					all.innerHTML = "全选";
+				}
+			}
+		}
+	</script>
+</html>
